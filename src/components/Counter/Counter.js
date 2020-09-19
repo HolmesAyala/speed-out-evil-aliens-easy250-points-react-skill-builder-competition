@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
  */
 import useStyles from 'isomorphic-style-loader/useStyles';
 import styleSheet from './Counter.css';
+/**
+ * Tooltip
+ */
+import Tooltip from '../Tooltip';
 
 export default function Counter({ delta, maxValue, minValue, fixedDecimals }) {
   useStyles(styleSheet);
@@ -45,23 +49,29 @@ export default function Counter({ delta, maxValue, minValue, fixedDecimals }) {
 
   return (
     <div className={styleSheet.root}>
-      <button
-        className={styleSheet.button}
-        onClick={onClickInPlusButtom}
-        type="button"
-      >
-        +
-      </button>
+      <Tooltip text="Increase Speed">
+        <button
+          className={styleSheet.button}
+          onClick={onClickInPlusButtom}
+          type="button"
+        >
+          +
+        </button>
+      </Tooltip>
 
-      <span className={labelClassList.join(' ')}>{value}</span>
+      <Tooltip text="Current Speed">
+        <span className={labelClassList.join(' ')}>{value}</span>
+      </Tooltip>
 
-      <button
-        className={styleSheet.button}
-        onClick={onClickInLessButtom}
-        type="button"
-      >
-        -
-      </button>
+      <Tooltip text="Decrease Speed">
+        <button
+          className={styleSheet.button}
+          onClick={onClickInLessButtom}
+          type="button"
+        >
+          -
+        </button>
+      </Tooltip>
     </div>
   );
 }

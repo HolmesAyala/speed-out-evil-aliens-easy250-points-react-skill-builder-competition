@@ -1,0 +1,33 @@
+.root {
+  position: relative;
+}
+
+.tooltipText {
+  position: absolute;
+  text-align: center;
+  min-width: 100px;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(79, 79, 79, 0.768);
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.tooltipText::after {
+  content: ' ';
+  position: absolute;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(79, 79, 79, 0.768) transparent transparent;
+}
+
+.root:hover .tooltipText {
+  opacity: 1;
+}
