@@ -1,0 +1,59 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+  width: 64px;
+  height: 64px;
+  outline: 0;
+  border: 1px solid #373277;
+  border-radius: 0;
+  background: #373277;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.3333333;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(54, 50, 119, 0.8);
+}
+
+.button:focus {
+  border-color: #0074c2;
+  box-shadow: 0 0 8px rgba(0, 116, 194, 0.6);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  width: 64px;
+  height: 64px;
+}
+
+@keyframes value-in-limit-animation {
+  from {
+    color: crimson;
+  }
+
+  to {
+    color: #222;
+  }
+}
+
+.valueInLimit {
+  animation-name: value-in-limit-animation;
+  animation-duration: 2s;
+}
